@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netflix Clone</title>
+<link rel="stylesheet" href="netflix.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">NETFLIX</div>
+  <div class="nav-links">
+    <span onclick="showPage('home')">Home</span>
+    <span onclick="showPage('list')">My List</span>
+    <span onclick="showPage('profile')">Profile</span>
+  </div>
+</div>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+
+  <!-- Featured Banner -->
+  <div class="banner">
+    <h1>Stranger Stuff</h1>
+    <p>Things get weird. Very weird.</p>
+    <button onclick="showPage('player')">▶ Play</button>
+  </div>
+
+  <!-- Movie Row -->
+  <h2>Popular</h2>
+  <div class="row">
+    <img src="https://picsum.photos/200/300?1" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?2" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?3" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?4" onclick="showPage('player')">
+  </div>
+
+  <h2>Trending Now</h2>
+  <div class="row">
+    <img src="https://picsum.photos/200/300?5" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?6" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?7" onclick="showPage('player')">
+    <img src="https://picsum.photos/200/300?8" onclick="showPage('player')">
+  </div>
+
+</div>
+
+<!-- VIDEO PLAYER PAGE -->
+<div id="player" class="page">
+
+  <div class="player">
+    <h2>Now Playing</h2>
+
+    <video controls width="100%">
+      <source src="sample.mp4" type="video/mp4">
+    </video>
+
+    <button onclick="showPage('home')">⬅ Back</button>
+  </div>
+
+</div>
+
+<!-- MY LIST PAGE -->
+<div id="list" class="page">
+
+  <div class="list">
+    <h2>My List</h2>
+
+    <div class="row">
+      <img src="https://picsum.photos/200/300?9">
+      <img src="https://picsum.photos/200/300?10">
+      <img src="https://picsum.photos/200/300?11">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PROFILE PAGE -->
+<div id="profile" class="page">
+
+  <div class="profile">
+    <img src="https://picsum.photos/120">
+    <h2>User Name</h2>
+    <p>Premium Plan • Ultra HD</p>
+
+    <button onclick="showPage('home')">Switch Profile</button>
+  </div>
+
+</div>
+
+<script>
+
+/* Page switching */
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
